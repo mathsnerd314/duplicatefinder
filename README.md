@@ -1,6 +1,14 @@
 # duplicatefinder
-Given two directories, it finds the duplicate files.
+Project Scope : Given two directories, it finds the duplicate files.
 
-Libraries needed: guizero needs to be installed in order for the GUI to work, install by using the command "pip3 install guizero" in cmd prompt. Also it is written in Python 3 so an up to date version of Python needs to be installed for it to run.
+Assumption:
+Python version 3 is already installed on the desktop, desktop is using Windows, as the program does not work on macOS.
 
-Run either from the console or through an IDE
+Prerequisite:
+Libraries needed: guizero needs to be installed in order for the GUI to work.
+
+1) Install by using the command "pip3 install guizero" in command prompt.
+
+Program Execution
+
+1) Run either from the console (python <<filename.py>>) or through an IDE.
