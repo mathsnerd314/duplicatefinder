@@ -44,8 +44,10 @@ def find():
     folder2 = input_box2.value
     if os.path.exists(folder1) and os.path.exists(folder2):
         dups = joindicts(check(folder1),check(folder2))
+        aredups = False
         for key in dups:
             if len(dups[key]) > 1:
+                aredups = True
                 info = "\nDuplicate files found! Names may be different but the content is identical"
                 print(info)
                 infotext = Text(app, text=info, font="Calibri")
@@ -53,8 +55,12 @@ def find():
                     print(item)
                     itemtext = Text(app, text=item, font="Calibri")
                     #outputs to console and GUI
+        if aredups == False:
+            info = "\nNo duplicates found"
+            print(info)
+            infotext = Text(app, text=info, font="Calibri")
     else:
-        errortext = Text(app, text="One or both directories do not exist", font="Calibri")
+        errortext = Text(app, text="One or both directories do not exist", font="Calibri", color="red")
         print("One or both directories do not exist")
 
 #exit function
@@ -63,10 +69,11 @@ def exit():
 
 #sets up GUI
 app = App(title="Duplicate File Finder", width=screen_width, height=screen_height)
-text1 = Text(app, text="Enter first directory", font="Calibri")
+text1 = Text(app, text="Enter first directory *", font="Calibri")
 input_box1 = TextBox(app, width=100)
-text2 = Text(app, text="Enter second directory", font="Calibri")
+text2 = Text(app, text="Enter second directory *", font="Calibri")
 input_box2 = TextBox(app, width=100)
+infotext2 = Text(app, text="* indicates required field", font="Calibri")
 button = PushButton(app, text="Find Duplicates", command=find)
 exitbutton = PushButton(app, text="Exit", command=exit)
 app.display()
