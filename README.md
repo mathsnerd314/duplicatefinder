@@ -1,8 +1,9 @@
 # duplicatefinder
 Project Scope : Given two directories, it finds the duplicate files.
 
-Assumption:
-Python version 3 is already installed on the desktop, desktop is using Windows, as the program does not work on macOS.
+Assumptions:
+1) Python version 3 is already installed on the desktop
+2) Desktop is using Windows, as the program does not work on macOS.
 
 Prerequisite:
 Libraries needed: guizero needs to be installed in order for the GUI to work.
