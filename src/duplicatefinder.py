@@ -42,16 +42,21 @@ def check(folder):
 def find():
     folder1 = input_box1.value
     folder2 = input_box2.value
-    dups = joindicts(check(folder1),check(folder2))
-    for key in dups:
-        if len(dups[key]) > 1:
-            info = "\nDuplicate files found! Names may be different but the content is identical"
-            print(info)
-            infotext = Text(app, text=info, font="Calibri")
-            for item in dups[key]:
-                print(item)
-                itemtext = Text(app, text=item, font="Calibri")
-                #outputs to console and GUI
+    if os.path.exists(folder1) and os.path.exists(folder2):
+        dups = joindicts(check(folder1),check(folder2))
+        for key in dups:
+            if len(dups[key]) > 1:
+                info = "\nDuplicate files found! Names may be different but the content is identical"
+                print(info)
+                infotext = Text(app, text=info, font="Calibri")
+                for item in dups[key]:
+                    print(item)
+                    itemtext = Text(app, text=item, font="Calibri")
+                    #outputs to console and GUI
+    else:
+        errortext = Text(app, text="One or both directories do not exist", font="Calibri")
+        print("One or both directories do not exist")
+
 #exit function
 def exit():
     app.destroy()
